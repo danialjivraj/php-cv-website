@@ -4,7 +4,7 @@ The application features a home page that showcases a list of all CVs available 
 Users can click on 'More Details' to view in-depth information about a specific CV, create an account and log out.<br>
 
 To see the website, please click <a href="https://210093030.cs2410-web01pvm.aston.ac.uk/viewcv.php">here!</a> (Website hosted by Aston University servers)<br>
-For more information check the Portfolio 3 Report.pdf.
+For more detailed technical information, check the <a href="https://github.com/danialjivraj/InternetApplicationsAndDatabaseDesign-PHPWebsite/blob/main/Portfolio%203%20Report.pdf">Portfolio 3 Report.pdf.</a>
 
 One of the key functionalities of this application is the ability to search for CVs, making it effortless for users to find relevant information based on specific criteria.<br>
 
