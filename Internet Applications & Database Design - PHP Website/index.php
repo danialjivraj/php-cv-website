@@ -14,7 +14,6 @@
 	<script src="https://kit.fontawesome.com/aa1a7f25aa.js" crossorigin="anonymous"></script>
 </head>
 
-
 <body>
 	<header>
 		<div class="main-header">
@@ -40,58 +39,52 @@
 
 	<br />
 
-
 	<div style="padding: 30px">
 
-
-	<?php
-	//if the form has been submitted
-	if (isset($_POST['submitted'])) {
-		if (!isset($_POST['username'], $_POST['password'])) {
-			// Could not get the data that should have been sent.
-			exit('Please fill both the username and password fields!');
-		}
-		// connect DB
-		require_once("connectdb.php");
-		try {
-			//Query DB to find the matching username/password
-			//using prepare/bindparameter to prevent SQL injection.
-			$stat = $db->prepare('SELECT password FROM cvs WHERE name = ?');
-			$stat->execute(array($_POST['username']));
-
-			// fetch the result row and check 
-			if ($stat->rowCount() > 0) {  // matching username
-				$row = $stat->fetch();
-
-				if (password_verify($_POST['password'], $row['password'])) { //matching password
-
-					//??recording the user session variable and go to loggedin page?? 
-					session_start();
-					$_SESSION["username"] = $_POST['username'];
-					header("Location:viewcv.php");
-					exit();
-				} else {
-					echo "<p style='color:red; font-size: 20px;'>Error logging in, password does not match!</p><br>";
-				}
-			} else {
-				//else display an error
-
-				echo "<div id='contact-me'><p style='color:red; font-size: 20px;'>Error logging in, Username not found </p><br></div>";
+		<?php
+		//if the form has been submitted
+		if (isset($_POST['submitted'])) {
+			if (!isset($_POST['username'], $_POST['password'])) {
+				// Could not get the data that should have been sent.
+				exit('Please fill both the username and password fields!');
 			}
-		} catch (PDOException $ex) {
-			echo ("Failed to connect to the database.<br>");
-			echo ($ex->getMessage());
-			exit;
-		}
-	}
-	?>
+			// connect DB
+			require_once("connectdb.php");
+			try {
+				//Query DB to find the matching username/password
+				//using prepare/bindparameter to prevent SQL injection.
+				$stat = $db->prepare('SELECT password FROM cvs WHERE name = ?');
+				$stat->execute(array($_POST['username']));
 
+				// fetch the result row and check 
+				if ($stat->rowCount() > 0) {  // matching username
+					$row = $stat->fetch();
+
+					if (password_verify($_POST['password'], $row['password'])) { //matching password
+
+						//??recording the user session variable and go to loggedin page?? 
+						session_start();
+						$_SESSION["username"] = $_POST['username'];
+						header("Location:viewcv.php");
+						exit();
+					} else {
+						echo "<p style='color:red; font-size: 20px;'>Error logging in, password does not match!</p><br>";
+					}
+				} else {
+					//else display an error
+
+					echo "<div id='contact-me'><p style='color:red; font-size: 20px;'>Error logging in, Username not found </p><br></div>";
+				}
+			} catch (PDOException $ex) {
+				echo ("Failed to connect to the database.<br>");
+				echo ($ex->getMessage());
+				exit;
+			}
+		}
+		?>
 
 		<h2 style="color: rgb(102, 139, 170)">Login</h2>
 		<br>
-
-		
-
 
 		<!-- a HTML form that allows the user to enter their username and password for log in.-->
 
@@ -113,16 +106,9 @@
 
 		<br><br><br><br><br><br><br>
 
-
-
 	</div>
 
-
-
-
 	<br><br><br><br><br><br><br>
-
-
 
 	<footer class="otherpages-footer">
 		<div class="footer-content">
@@ -150,7 +136,6 @@
 			</p>
 		</div>
 	</footer>
-
 </body>
 
 </html>

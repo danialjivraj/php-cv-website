@@ -66,7 +66,6 @@
         ?>
                 <table cellspacing="0" cellpadding="5" id="myTable">
                     <tr>
-
                         <th align='left' style='padding-right: 30px '><b style="color: rgb(102, 139, 170)">Name</b></th>
                         <th align='left' style='padding-right: 20px'><b style="color: rgb(102, 139, 170)">Email</b></th>
                         <th align='left' style='padding-right: 40px'><b style="color: rgb(102, 139, 170)">Key Programming Language</b></th>
@@ -75,8 +74,6 @@
                 // Fetch and  print all  the records.
                 while ($row =  $rows->fetch()) {
                     $currentID = $row['id'];
-
-
 
                     echo  "<td align='left' style='padding-right: 30px'>" . $row['name'] . "</td>";
                     echo  "<td align='left' style='padding-right: 20px'>" . $row['email'] . "</td>";
@@ -91,17 +88,11 @@
             echo "Sorry, a database error occurred! <br>";
             echo "Error details: <em>" . $ex->getMessage() . "</em>";
         }
-
             ?>
 
     </div>
 
-
-
-
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
 
     <footer class="otherpages-footer">
         <div class="footer-content">
@@ -129,7 +120,6 @@
             </p>
         </div>
     </footer>
-
 </body>
 
 </html>

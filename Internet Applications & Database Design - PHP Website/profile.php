@@ -13,7 +13,6 @@
     <script src="https://kit.fontawesome.com/aa1a7f25aa.js" crossorigin="anonymous"></script>
 </head>
 
-
 <body>
     <header>
         <div class="main-header">
@@ -38,12 +37,7 @@
         </div>
     </header>
 
-
     <div style="padding: 30px">
-
-
-    
-
         <h2 style="color: rgb(102, 139, 170)"> Update your information!</h2> <br>
 
         <?php
@@ -69,7 +63,6 @@
             require_once('connectdb.php');
             $id = $_GET['alpha'];
 
-
             $username = isset($_POST['username']) ? $_POST['username'] : false;
             $email = isset($_POST['email']) ? $_POST['email'] : false;
             $keyprogramming = isset($_POST['keyprogramming']) ? $_POST['keyprogramming'] : false;
@@ -79,38 +72,34 @@
 
 
             if (empty($_POST['username'])) {
-				echo "<p style='color:#D81E3D'; >Please insert a Username! </p><br>";
-			} else if (empty($_POST['email'])) {
-				echo "<p style='color:#D81E3D'; >Please insert an Email!</p><br>";
-			} else if (empty($_POST['keyprogramming'])) {
-				echo "<p style='color:#D81E3D'; >Please insert a Key Programming Language!</p><br>";
-			} else if (empty($_POST['profile'])) {
-				echo "<p style='color:#D81E3D'; >Please insert a Profile!</p><br>";
-			} else if (empty($_POST['education'])) {
-				echo "<p style='color:#D81E3D'; >Please insert an Education!</p><br>";
-			} else if (empty($_POST['url'])) {
-				echo "<p style='color:#D81E3D'; >Please insert a URL Link!</p><br>";
-			} else {
+                echo "<p style='color:#D81E3D'; >Please insert a Username! </p><br>";
+            } else if (empty($_POST['email'])) {
+                echo "<p style='color:#D81E3D'; >Please insert an Email!</p><br>";
+            } else if (empty($_POST['keyprogramming'])) {
+                echo "<p style='color:#D81E3D'; >Please insert a Key Programming Language!</p><br>";
+            } else if (empty($_POST['profile'])) {
+                echo "<p style='color:#D81E3D'; >Please insert a Profile!</p><br>";
+            } else if (empty($_POST['education'])) {
+                echo "<p style='color:#D81E3D'; >Please insert an Education!</p><br>";
+            } else if (empty($_POST['url'])) {
+                echo "<p style='color:#D81E3D'; >Please insert a URL Link!</p><br>";
+            } else {
+                try {
 
-
-            try {
-
-                $stat = $db->prepare("UPDATE cvs SET name='$username', email='$email', keyprogramming='$keyprogramming', 
+                    $stat = $db->prepare("UPDATE cvs SET name='$username', email='$email', keyprogramming='$keyprogramming', 
                 profile='$profile', education='$education', URLlinks='$url' where name='$id'");
 
-                $stat->execute();
+                    $stat->execute();
 
-                echo "<p style='color: #00F95B; font-size:20px;' >Congratulations! Your details have been updated!</p> <br>";
-                echo "<p style='color:white; font-size:14px; font-family: 'Montserrat';'>If you want to update your profile again, please log out first and log back in for the update to take full effect!</p>";
-            } catch (PDOexception $ex) {
-                echo "<p style='color:#D81E3D'; >Sorry, a database error occurred! Make sure you don't leave any fields blank! </p><br>";
-                echo "Error details: <em>" . $ex->getMessage() . "</em> <br><br>";
+                    echo "<p style='color: #00F95B; font-size:20px;' >Congratulations! Your details have been updated!</p> <br>";
+                    echo "<p style='color:white; font-size:14px; font-family: 'Montserrat';'>If you want to update your profile again, please log out first and log back in for the update to take full effect!</p>";
+                } catch (PDOexception $ex) {
+                    echo "<p style='color:#D81E3D'; >Sorry, a database error occurred! Make sure you don't leave any fields blank! </p><br>";
+                    echo "Error details: <em>" . $ex->getMessage() . "</em> <br><br>";
+                }
             }
         }
-
-    }
         ?>
-
         <br>
     </div>
 

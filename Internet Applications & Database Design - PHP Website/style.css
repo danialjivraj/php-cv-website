@@ -252,12 +252,12 @@ td {
 
 /* this will effect the title and description */
 
-.image_overlay > * {
+.image_overlay>* {
   transform: translateY(20px);
   transition: transform 0.25s;
 }
 
-.image_overlay:hover > * {
+.image_overlay:hover>* {
   transform: translateY(0);
 }
 

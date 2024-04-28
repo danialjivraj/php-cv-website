@@ -14,7 +14,6 @@
     <script src="https://kit.fontawesome.com/aa1a7f25aa.js" crossorigin="anonymous"></script>
 </head>
 
-
 <body>
     <header>
         <div class="main-header">
@@ -67,7 +66,6 @@
         ?>
                 <table cellspacing="0" cellpadding="5" id="myTable">
                     <tr>
-
                         <th align='left' style='padding-right: 30px '><b style="color: rgb(102, 139, 170)">Name</b></th>
                         <th align='left' style='padding-right: 20px'><b style="color: rgb(102, 139, 170)">Email</b></th>
                         <th align='left' style='padding-right: 40px'><b style="color: rgb(102, 139, 170)">Key Programming Language</b></th>
@@ -89,17 +87,10 @@
             echo "Sorry, a database error occurred! <br>";
             echo "Error details: <em>" . $ex->getMessage() . "</em>";
         }
-
             ?>
-
     </div>
 
-
-
-
     <br><br><br><br><br><br><br>
-
-
 
     <footer class="otherpages-footer">
         <div class="footer-content">

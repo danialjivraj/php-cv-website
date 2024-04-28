@@ -13,7 +13,6 @@
 	<script src="https://kit.fontawesome.com/aa1a7f25aa.js" crossorigin="anonymous"></script>
 </head>
 
-
 <body>
 	<header>
 		<div class="main-header">
@@ -36,9 +35,7 @@
 		</div>
 	</header>
 
-
 	<div style="padding: 30px">
-
 
 		<?php
 		//if the form has been submitted
@@ -89,9 +86,7 @@
 			}
 		}
 
-
 		?>
-
 
 		<h2 style="color: rgb(102, 139, 170)"> Register</h2> <br>
 
@@ -142,7 +137,5 @@
 		</p>
 	</div>
 </footer>
-
-
 
 </html>

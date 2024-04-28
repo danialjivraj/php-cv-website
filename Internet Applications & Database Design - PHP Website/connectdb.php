@@ -1,8 +1,8 @@
 <?php
 
 $db_host = 'localhost';
-$db_name = 'u_210093030_astoncv';
-$username = 'u-210093030';
+$db_name = 'test';
+$username = 'root';
 $password = '';
 
 try {

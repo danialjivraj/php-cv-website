@@ -14,7 +14,6 @@
     <script src="https://kit.fontawesome.com/aa1a7f25aa.js" crossorigin="anonymous"></script>
 </head>
 
-
 <body>
     <header>
         <div class="main-header">
@@ -36,9 +35,7 @@
             </nav>
         </div>
     </header>
-
     <br />
-
 
     <?php
     //if the form has been submitted
@@ -82,13 +79,8 @@
     }
     ?>
 
-
     <div style="padding: 30px; font-family: 'Montserrat'">
-
-
-
         <h2 style="color:white;">Profile</h2>
-
         <br>
 
         <?php
@@ -105,7 +97,6 @@
         ?>
                 <table cellspacing="0" cellpadding="5" id="myTable">
                     <tr>
-
                         <th align='left' style='padding-right: 30px '><b style="color: rgb(102, 139, 170)">Name</b></th>
                         <th align='left' style='padding-right: 20px'><b style="color: rgb(102, 139, 170)">Email</b></th>
                         <th align='left' style='padding-right: 40px'><b style="color: rgb(102, 139, 170)">Key Programming Language</b>
@@ -117,7 +108,6 @@
                 // Fetch and  print all  the records.
                 while ($row =  $rows->fetch()) {
                     $currentID = $row['id'];
-
 
                     echo  "<td align='left' style='padding-right: 30px'>" . $row['name'] . "</td>";
                     echo  "<td align='left' style='padding-right: 20px'>" . $row['email'] . "</td>";
@@ -136,15 +126,9 @@
         }
 
             ?>
-
-
     </div>
 
-
-
-
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
 
     <footer class="otherpages-footer">
         <div class="footer-content">
@@ -172,7 +156,6 @@
             </p>
         </div>
     </footer>
-
 </body>
 
 </html>
